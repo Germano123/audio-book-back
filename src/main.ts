@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ApiConfigService } from './modules/shared/services/api-config.service';
-import { SharedModule } from './modules/shared/shared.module';
+import { ApiConfigService } from './shared/services/api-config.service';
+import { SharedModule } from './shared/shared.module';
 import { setupSwagger } from './setup-swagger';
 
 async function bootstrap() {
