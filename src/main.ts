@@ -6,14 +6,16 @@ import { setupSwagger } from './setup-swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  
+
   const configService = app.select(SharedModule).get(ApiConfigService);
-  
-  // setupSwagger(app);
-  
+
+  setupSwagger(app);
+
   const PORT = configService.config.port || 8080;
   await app.listen(PORT);
 
-  console.info(`server is running in: http://localhost:${PORT}`);
+  console.info(
+    `documentation is running in: http://localhost:${PORT}/documentation`,
+  );
 }
 bootstrap();
