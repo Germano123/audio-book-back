@@ -1,6 +1,9 @@
-import { AbstractDto } from "../../../common/dto/AbstractDto";
+import { ApiProperty } from '@nestjs/swagger';
+import { AbstractDto } from '../../../common/dto/AbstractDto';
 
 export class BookDto extends AbstractDto {
-    name: string;
-    author: string;
+  @ApiProperty()
+  name: string;
+  @ApiProperty()
+  author: string;
 }
